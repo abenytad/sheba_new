@@ -1,4 +1,3 @@
-// components/Header.tsx
 "use client";
 import Link from "next/link";
 import Image from "next/image";
@@ -28,10 +27,10 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isSticky ? "bg-black/80" : "bg-transparent"
+        isSticky ? "bg-black/75" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center py-2 max-w-screen-xl mx-auto px-4">
+      <div className="flex items-center py-4 max-w-screen-xl mx-auto px-4"> {/* Increased padding */}
         {/* Logo section on the left */}
         <div className="flex-shrink-0">
           <Link href="/">
@@ -47,7 +46,7 @@ export default function Header() {
         {/* Desktop Links - centered */}
         <div className="flex-1 hidden md:flex justify-center">
           <nav className="space-x-6 text-white text-sm">
-            {["/", "/about", "/blogs", "/contact", "/gallery"].map((path) => (
+            {["/", "/about", "/contact"].map((path) => (
               <Link
                 key={path}
                 href={path}
@@ -84,7 +83,7 @@ export default function Header() {
 
         {/* Links Section - Moved to Top of Drawer */}
         <nav className="flex flex-col justify-start items-center pt-16 space-y-6 text-white text-base">
-          {["/", "/about", "/blogs", "/contact", "/gallery"].map((path) => (
+          {["/", "/about", "/contact"].map((path) => (
             <Link
               key={path}
               href={path}

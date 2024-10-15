@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import Arrow from "@/components/Arrow"; // Import the Arrow component
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -31,6 +33,7 @@ export default function RootLayout({
         <Header />
         <main className="relative z-0">{children}</main>
         <Footer />
+        <Arrow /> {/* Add the Arrow component here */}
       </body>
     </html>
   );
