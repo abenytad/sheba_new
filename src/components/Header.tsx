@@ -35,7 +35,7 @@ export default function Header() {
         <div className="flex-shrink-0">
           <Link href="/">
             <Image
-              src="/images/logo.png" // Use your logo image here
+              src="/images/logo1.png" 
               alt="Logo"
               width={70}
               height={70}
@@ -46,7 +46,7 @@ export default function Header() {
         {/* Desktop Links - centered */}
         <div className="flex-1 hidden md:flex justify-center">
           <nav className="space-x-6 text-white text-sm">
-            {["/", "/about", "/contact"].map((path) => (
+            {["/", "/about", "/blog","/contact"].map((path) => (
               <Link
                 key={path}
                 href={path}
@@ -83,7 +83,7 @@ export default function Header() {
 
         {/* Links Section - Moved to Top of Drawer */}
         <nav className="flex flex-col justify-start items-center pt-16 space-y-6 text-white text-base">
-          {["/", "/about", "/contact"].map((path) => (
+          {["/", "/about","blog" ,"/contact"].map((path) => (
             <Link
               key={path}
               href={path}

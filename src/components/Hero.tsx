@@ -2,6 +2,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // Importing Image from Next.js
 import { FaFacebookF, FaInstagram, FaTelegramPlane, FaTiktok, FaEnvelope } from 'react-icons/fa';
 
 export default function Hero() {
@@ -41,6 +42,16 @@ export default function Hero() {
 
       {/* Content Overlay */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+        
+        {/* Logo Image */}
+        <Image 
+          src="/images/logo2.png" // Path to the logo image
+          alt="Sheba Coffee Logo" // Alternative text for the image
+          width={150} // Set an appropriate width
+          height={150} // Set an appropriate height
+          className="mb-4" // Add margin below the logo
+        />
+        
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug sm:leading-tight text-primary mb-2">
           Welcome to Sheba Coffee
         </h1>
