@@ -47,9 +47,10 @@ export default function Hero() {
         <Image 
           src="/images/logo2.png" // Path to the logo image
           alt="Sheba Coffee Logo" // Alternative text for the image
-          width={150} // Set an appropriate width
-          height={150} // Set an appropriate height
-          className="mb-4" // Add margin below the logo
+          width={250} // Set an appropriate width
+          height={250} // Set an appropriate height
+          layout="responsive" 
+          className="mb-2 mt-6" // Add margin below the logo
         />
         
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug sm:leading-tight text-primary mb-2">

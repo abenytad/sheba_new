@@ -30,15 +30,17 @@ export default function Header() {
         isSticky ? "bg-black/75" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center py-4 max-w-screen-xl mx-auto px-4"> {/* Increased padding */}
+      <div className="flex items-center py-2 max-w-screen-xl mx-auto px-4"> {/* Increased padding */}
         {/* Logo section on the left */}
         <div className="flex-shrink-0">
           <Link href="/">
             <Image
-              src="/images/logo1.png" 
+              src="/images/logo1.png"
               alt="Logo"
-              width={70}
-              height={70}
+              width={175}
+              height={175}
+              layout="responsive" // Make the logo responsive
+              className="max-h-16" // Set max height to ensure it fits well on all screens
             />
           </Link>
         </div>
@@ -46,7 +48,7 @@ export default function Header() {
         {/* Desktop Links - centered */}
         <div className="flex-1 hidden md:flex justify-center">
           <nav className="space-x-6 text-white text-sm">
-            {["/", "/about", "/blog","/contact"].map((path) => (
+            {["/", "/about", "/blog", "/contact"].map((path) => (
               <Link
                 key={path}
                 href={path}
@@ -61,7 +63,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Icon - Positioned to the top right */}
-        <div className="md:hidden flex-shrink-0 absolute top-4 right-4">
+        <div className="md:hidden flex-shrink-0 absolute top-0 right-4 flex items-center h-full">
           <button onClick={toggleMenu} className="text-white">
             {isMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />} {/* Toggle Menu Icon */}
           </button>
@@ -83,7 +85,7 @@ export default function Header() {
 
         {/* Links Section - Moved to Top of Drawer */}
         <nav className="flex flex-col justify-start items-center pt-16 space-y-6 text-white text-base">
-          {["/", "/about","blog" ,"/contact"].map((path) => (
+          {["/", "/about", "/blog", "/contact"].map((path) => (
             <Link
               key={path}
               href={path}
