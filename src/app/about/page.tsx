@@ -1,4 +1,9 @@
 import Image from 'next/image'; // Import the Next.js Image component
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "About"
+}
 
 export default function About() {
     return (
@@ -130,11 +135,10 @@ export default function About() {
                 <h3 className="text-xl md:text-2xl font-semibold text-secondary mb-2">Mrs. Samrawit Yimer</h3>
                 <div className="w-full md:max-w-3xl mx-auto"> {/* Fixed width for paragraphs */}
                     <p className="text-gray-700 leading-relaxed">
-                        Ms. Samrawit Yimer, the visionary behind <span className="text-primary">Sheba Coffee</span>, hails from Ethiopia, a country known as the birthplace of coffee. Her passion for coffee is deeply rooted in her heritage, and she is dedicated to bringing the authentic taste of Ethiopian coffee to the global market.
+                        Mrs. Samrawit Yimer is a visionary entrepreneur with a passion for promoting Ethiopia's rich coffee heritage. She founded <span className="text-primary">Sheba Coffee</span> with a mission to share Ethiopia's unique coffee experience with the world while empowering local farmers through sustainable practices.
                     </p>
-
                 </div>
             </div>
         </div>
-    );
+    )
 }

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { FiMenu, FiX } from "react-icons/fi"; // React Icons for Menu and Close icons
+import { FiMenu, FiX } from "react-icons/fi";
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState<boolean>(false);
@@ -12,14 +12,13 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 0); // When scrolled down more than 0px
+      setIsSticky(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Function to toggle the mobile menu (drawer)
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -30,17 +29,16 @@ export default function Header() {
         isSticky ? "bg-black/75" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center py-2 max-w-screen-xl mx-auto px-4"> {/* Increased padding */}
+      <div className="flex items-center justify-between py-4 max-w-screen-xl mx-auto px-4"> {/* Adjusted the height with py-4 for more vertical centering */}
+        
         {/* Logo section on the left */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 flex items-center h-full"> {/* Added flex and h-full to center vertically */}
           <Link href="/">
             <Image
               src="/images/logo1.png"
               alt="Logo"
               width={175}
               height={175}
-              layout="responsive" // Make the logo responsive
-              className="max-h-16" // Set max height to ensure it fits well on all screens
             />
           </Link>
         </div>
@@ -65,12 +63,12 @@ export default function Header() {
         {/* Mobile Menu Icon - Positioned to the top right */}
         <div className="md:hidden flex-shrink-0 absolute top-0 right-4 flex items-center h-full">
           <button onClick={toggleMenu} className="text-white">
-            {isMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />} {/* Toggle Menu Icon */}
+            {isMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />}
           </button>
         </div>
       </div>
 
-      {/* Full-Screen Mobile Drawer - displayed only when open */}
+      {/* Full-Screen Mobile Drawer */}
       <div
         className={`fixed top-0 left-0 h-full w-full bg-black transition-transform duration-300 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
@@ -92,7 +90,7 @@ export default function Header() {
               className={`hover:text-primary ${
                 pathname === path ? "text-secondary" : ""
               }`}
-              onClick={() => setIsMenuOpen(false)} // Close menu when clicking a link
+              onClick={() => setIsMenuOpen(false)}
             >
               {path === "/" ? "HOME" : path.toUpperCase().replace("/", " ")}
             </Link>

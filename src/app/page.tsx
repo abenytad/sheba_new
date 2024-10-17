@@ -5,6 +5,7 @@ import Slogan from "@/components/Slogan";
 import Testimony from "@/components/Testimony";
 import Video from "@/components/Video";
 import Contact from "@/components/Contact";
+
 export default function Home() {
   return (
     <main>

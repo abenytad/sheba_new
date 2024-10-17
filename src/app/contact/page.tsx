@@ -1,6 +1,10 @@
 import ContactInfo from "@/components/ContactInfo"; // Ensure the import path is correct
 import ContactForm from "@/components/ContactForm";
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+    title: "Contact"
+}
 export default function ContactPage() {
   return (
     <div>

@@ -36,32 +36,22 @@ export default function Hero() {
         muted
         playsInline
       />
-
-      {/* Overlay to darken video for better text visibility */}
       <div className="absolute inset-0 bg-black bg-opacity-40" />
-
-      {/* Content Overlay */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-        
-        {/* Logo Image */}
         <Image 
-          src="/images/logo2.png" // Path to the logo image
-          alt="Sheba Coffee Logo" // Alternative text for the image
-          width={250} // Set an appropriate width
-          height={250} // Set an appropriate height
-          layout="responsive" 
-          className="mb-2 mt-6" // Add margin below the logo
+          src="/images/logo2.png" 
+          alt="Sheba Coffee Logo" 
+          width={350} // Set an appropriate width
+          height={350} // Set an appropriate height
+          className="mt-8" // Add margin below the logo
         />
         
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug sm:leading-tight text-primary mb-2">
+        {/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug sm:leading-tight text-primary">
           Welcome to Sheba Coffee
-        </h1>
-
-        <p className="mt-4 text-base sm:text-lg md:text-xl max-w-xl">
+        </h1> */}
+        <p className="text-base sm:text-xl md:text-3xl max-w-4xl">
           Where we bring you the rich flavors and heritage of Ethiopian coffee.
         </p>
-
-        {/* Social Media Icons for Mobile */}
         <div className="flex space-x-4 mt-6 sm:hidden">
           <Link href="https://facebook.com/shebaa" target="_blank" rel="noopener noreferrer">
             <FaFacebookF size={40} className="text-secondary hover:text-white hover:bg-secondary p-2 rounded-full transition" />
