@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import Link from 'next/link'; // Importing Next.js Link for link handling
 
 const ContactInfo: React.FC = () => {
   return (
@@ -14,15 +15,29 @@ const ContactInfo: React.FC = () => {
       {/* Contact Information Section */}
       <div className="flex items-center mb-4 hover:bg-gray-100 rounded p-2 transition-colors">
         <FaPhoneAlt className="mr-2 text-xl text-tertiary" />
-        <span className="text-gray-700">+1 234 567 890</span>
+        <Link href="tel:+251903366641">
+          <span className="text-gray-700 hover:underline cursor-pointer">+251 903366641</span>
+        </Link>
       </div>
       <div className="flex items-center mb-4 hover:bg-gray-100 rounded p-2 transition-colors">
         <FaPhoneAlt className="mr-2 text-xl text-tertiary" />
-        <span className="text-gray-700">+1 234 567 891</span>
+        <Link href="tel:+251904064639">
+          <span className="text-gray-700 hover:underline cursor-pointer">+251 904064639</span>
+        </Link>
       </div>
+      
+      <div className="flex items-center mb-4 hover:bg-gray-100 rounded p-2 transition-colors">
+        <FaPhoneAlt className="mr-2 text-xl text-tertiary" />
+        <Link href="tel:+251994768585">
+          <span className="text-gray-700 hover:underline cursor-pointer">+251 994768585</span>
+        </Link>
+      </div>
+      
       <div className="flex items-center mb-4 hover:bg-gray-100 rounded p-2 transition-colors">
         <FaEnvelope className="mr-2 text-xl text-tertiary" />
-        <span className="text-gray-700">contact@sheba.com</span>
+        <Link href="mailto:contact@sheba.com">
+          <span className="text-gray-700 hover:underline cursor-pointer">contact@sheba.com</span>
+        </Link>
       </div>
     </div>
   );

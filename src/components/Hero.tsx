@@ -53,13 +53,13 @@ export default function Hero() {
           Where we bring you the rich flavors and heritage of Ethiopian coffee.
         </p>
         <div className="flex space-x-4 mt-6 sm:hidden">
-          <Link href="https://facebook.com/shebaa" target="_blank" rel="noopener noreferrer">
+          <Link href="https://www.facebook.com/profile.php?id=61566971802522" target="_blank" rel="noopener noreferrer">
             <FaFacebookF size={40} className="text-secondary hover:text-white hover:bg-secondary p-2 rounded-full transition" />
           </Link>
           <Link href="https://instagram.com/sheba_coffees" target="_blank" rel="noopener noreferrer">
             <FaInstagram size={40} className="text-secondary hover:text-white hover:bg-secondary p-2 rounded-full transition" />
           </Link>
-          <Link href="https://t.me" target="_blank" rel="noopener noreferrer">
+          <Link href="https://t.me/+72fDL2lX7j05MWE0" target="_blank" rel="noopener noreferrer">
             <FaTelegramPlane size={40} className="text-secondary hover:text-white hover:bg-secondary p-2 rounded-full transition" />
           </Link>
           <Link href="https://tiktok.com/@sheba_coffee" target="_blank" rel="noopener noreferrer">
@@ -79,7 +79,7 @@ export default function Hero() {
       >
         {/* Facebook */}
         <Link
-          href="https://facebook.com/shebaa"
+          href="https://www.facebook.com/profile.php?id=61566971802522"
           className={`group w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-transparent transition duration-300 ${
             scrolled
               ? 'hover:bg-secondary hover:text-white text-secondary font-semibold'
@@ -107,7 +107,7 @@ export default function Hero() {
 
         {/* Telegram */}
         <Link
-          href="https://t.me"
+          href="https://t.me/+72fDL2lX7j05MWE0"
           className={`group w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-transparent transition duration-300 ${
             scrolled
               ? 'hover:bg-secondary hover:text-white text-secondary font-semibold'

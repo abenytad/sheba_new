@@ -1,6 +1,7 @@
 'use client'; // if you are using Next.js
 
 import React, { useState } from 'react';
+import client from '../../utils/sanity';
 
 interface FormData {
   name: string;
@@ -17,7 +18,8 @@ const ContactForm: React.FC = () => {
     message: '',
   });
 
-  const [errors, setErrors] = useState<Partial<FormData>>({}); // State for error messages
+  const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false); // State for submission status
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -27,14 +29,13 @@ const ContactForm: React.FC = () => {
 
   const isValidEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
 
-  // Updated phone validation function
   const isValidPhone = (phone: string) => {
     const strippedPhone = phone.replace('+251', '').trim(); // Remove country code if present
     return (
       (strippedPhone.startsWith('9') || strippedPhone.startsWith('7')) && 
       strippedPhone.length === 9
     );
-  }; // Basic international phone number validation
+  };
 
   const validateForm = () => {
     const newErrors: Partial<FormData> = {};
@@ -43,18 +44,35 @@ const ContactForm: React.FC = () => {
     if (!isValidPhone(formData.phone)) newErrors.phone = 'Phone number is invalid';
     if (!formData.message) newErrors.message = 'Message is required';
 
-    setErrors(newErrors); // Set the errors in the state
+    setErrors(newErrors);
     return Object.keys(newErrors).length === 0; // Return true if there are no errors
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent default form submission
     if (validateForm()) {
-      // Proceed with form submission
-      console.log('Form submitted:', formData);
-      // Reset the form if needed
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      setErrors({}); // Clear errors on successful submission
+      setIsSubmitting(true); // Show the "submitting" status
+      const { name, email, phone, message } = formData; // Extract form data
+
+      const newContact = {
+        _type: 'contact',
+        name: name,
+        email: email,
+        phone: phone,
+        message: message
+      };
+
+      try {
+        // Submit data to Sanity Studio
+        const result = await client.create(newContact);
+        console.log('Contact created:', result);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        setErrors({});
+      } catch (error) {
+        console.error('Error submitting data:', error);
+      } finally {
+        setIsSubmitting(false); // Reset submitting state
+      }
     }
   };
 
@@ -108,8 +126,9 @@ const ContactForm: React.FC = () => {
         <button
           type="submit"
           className={`py-2 rounded transition-colors duration-300 bg-primary text-white hover:bg-secondary focus:outline-none focus:ring focus:ring-secondary`}
+          disabled={isSubmitting}
         >
-          Send
+          {isSubmitting ? 'Submitting...' : 'Send'}
         </button>
       </form>
     </div>

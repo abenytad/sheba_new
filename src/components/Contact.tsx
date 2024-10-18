@@ -1,5 +1,6 @@
 // components/Contact.tsx
 import { FiPhone, FiMail } from 'react-icons/fi'; // Importing icons for phone and email
+import Link from 'next/link'; // Importing Next.js Link
 
 export default function Contact() {
   return (
@@ -18,19 +19,25 @@ export default function Contact() {
         {/* Phone Number 1 */}
         <div className="flex items-center space-x-3">
           <FiPhone className="text-secondary text-3xl sm:text-4xl lg:text-5xl" /> {/* Increased icon size */}
-          <p className="text-lg sm:text-xl lg:text-2xl text-black">+1 234 567 890</p> {/* Increased font size for phone number */}
+          <Link href="tel:+251903366641" className="text-lg sm:text-xl lg:text-2xl text-black hover:underline"> {/* Use Next.js Link for phone */}
+            +251 903366641
+          </Link>
         </div>
 
         {/* Email */}
         <div className="flex items-center space-x-3">
           <FiMail className="text-secondary text-3xl sm:text-4xl lg:text-5xl" /> {/* Increased icon size */}
-          <p className="text-lg sm:text-xl lg:text-2xl text-black">info@weshebacoffee.com</p> {/* Increased font size for email */}
+          <Link href="mailto:info@weshebacoffee.com" className="text-lg sm:text-xl lg:text-2xl text-black hover:underline"> {/* Use Next.js Link for email */}
+            info@weshebacoffee.com
+          </Link>
         </div>
 
-        {/* Phone Number 2 */}
+        {/* Phone Number 3 */}
         <div className="flex items-center space-x-3">
           <FiPhone className="text-secondary text-3xl sm:text-4xl lg:text-5xl" /> {/* Increased icon size */}
-          <p className="text-lg sm:text-xl lg:text-2xl text-black">+1 987 654 321</p> {/* Increased font size for phone number */}
+          <Link href="tel:+251994768585" className="text-lg sm:text-xl lg:text-2xl text-black hover:underline"> 
+          +251 994768585 {/* Replace with actual number */}
+          </Link>
         </div>
       </div>
     </section>
