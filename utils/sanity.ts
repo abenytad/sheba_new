@@ -1,9 +1,10 @@
 import { createClient } from "next-sanity";
 const client = createClient({
-    projectId: 'ipbc24b6',
-    dataset: "production",
-    apiVersion: "2022-03-07",
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
     useCdn: false,
+    token:process.env.NEXT_PUBLIC_SANITY_TOKEN
   });
   
 

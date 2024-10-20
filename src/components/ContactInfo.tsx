@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
-import Link from 'next/link'; // Importing Next.js Link for link handling
-
+import Link from 'next/link'; 
 const ContactInfo: React.FC = () => {
   return (
     <div className="flex-1 p-6 bg-white rounded-lg">
@@ -11,8 +10,6 @@ const ContactInfo: React.FC = () => {
       <h3 className="text-lg text-secondary mb-6 text-center md:text-left">
         If you need to get in touch with the Sheba family, feel free to contact us
       </h3>
-      
-      {/* Contact Information Section */}
       <div className="flex items-center mb-4 hover:bg-gray-100 rounded p-2 transition-colors">
         <FaPhoneAlt className="mr-2 text-xl text-tertiary" />
         <Link href="tel:+251903366641">

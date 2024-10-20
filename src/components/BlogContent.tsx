@@ -1,16 +1,12 @@
 "use client";
 import client from "../../utils/sanity";
 import { useEffect, useState } from "react";
-import Image from 'next/image'; // Import Next.js Image component
-
-// Define the type for a blog post
+import Image from 'next/image';
 interface BlogPost {
   title: string;
   description: string;
   imageUrl: string;
 }
-
-// Function to fetch blogs from Sanity
 async function fetchBlogs(): Promise<BlogPost[]> {
   const blogs = await client.fetch(`*[_type == "blog"]{
     title,
@@ -21,10 +17,7 @@ async function fetchBlogs(): Promise<BlogPost[]> {
 }
 
 export default function BlogContent() {
-  // State to hold the fetched blog posts with the correct type
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
-
-  // Fetch blog data when the component mounts
   useEffect(() => {
     const getBlogs = async () => {
       const blogs = await fetchBlogs();
@@ -34,40 +27,34 @@ export default function BlogContent() {
   }, []);
 
   return (
-    <section className="px-4 md:px-0"> {/* Add padding for smaller screens */}
-      {/* Vertical Line and Blog Title */}
+    <section className="px-4 md:px-0"> 
       <div className="flex flex-col items-center mt-4">
-        <div className="h-20 w-1 bg-primary"></div> {/* Increased Vertical Line Height */}
-        <h2 className="mt-4 text-5xl md:text-6xl font-bold text-black text-center">Blogs</h2> {/* Increased Blog Title Font Size */}
+        <div className="h-20 w-1 bg-primary"></div>
+        <h2 className="mt-4 text-5xl md:text-6xl font-bold text-black text-center">Blogs</h2> 
       </div>
-
-      {/* Blog Posts Section */}
-      <div className="container mx-auto mt-6 max-w-6xl px-4"> {/* Max width for larger screens */}
+      <div className="container mx-auto mt-6 max-w-6xl px-4"> 
         {blogPosts.length === 0 ? (
-          <p className="text-center">Loading...</p> // Loading state if data hasn't been fetched yet
+          <p className="text-center">Loading...</p> 
         ) : (
           blogPosts.map((post, index) => (
-            <div key={index} className="mb-6"> {/* Added margin bottom for separation */}
+            <div key={index} className="mb-6"> 
               <div className={`flex flex-col md:flex-row items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="md:w-1/2 flex justify-center">
-                  {/* Use Next.js Image component with fixed width and height */}
                   <Image
                     src={post.imageUrl || "/images/latte.jpg"}
                     alt={post.title}
-                    width={450}  // Adjusted width for compactness
-                    height={250} // Adjusted height for compactness
-                    className="object-cover rounded-lg" // Use object-cover to maintain aspect ratio
+                    width={450}
+                    height={250}
+                    className="object-cover rounded-lg"
                   />
                 </div>
-                <div className="md:w-1/2 md:px-4 mt-4 md:mt-0 text-center md:text-left"> {/* Centered text for small screens */}
-                  <h3 className="text-3xl md:text-4xl font-bold text-primary">{post.title}</h3> {/* Increased title font size */}
+                <div className="md:w-1/2 md:px-4 mt-4 md:mt-0 text-center md:text-left">
+                  <h3 className="text-3xl md:text-4xl font-bold text-primary">{post.title}</h3> 
                   <p className="mt-2 text-gray-700">{post.description}</p>
                 </div>
               </div>
-
-              {/* Horizontal Line Between Blog Posts */}
               {index < blogPosts.length - 1 && (
-                <hr className="border-t border-secondary my-4" /> // Reduced vertical spacing
+                <hr className="border-t border-secondary my-4" /> 
               )}
             </div>
           ))
