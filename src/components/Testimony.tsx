@@ -3,6 +3,13 @@
 import { useState, useEffect } from 'react';
 import client from '../../utils/sanity';
 
+// Define the Testimony interface
+interface Testimony {
+  name: string;
+  description: string;
+  star: number;
+}
+
 // Function to fetch testimonies
 async function fetchTestimonies() {
   const testimonies = await client.fetch(`*[_type == "testimony"]{
@@ -14,15 +21,15 @@ async function fetchTestimonies() {
 }
 
 export default function Testimony() {
-  const [testimonies, setTestimonies] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true); // State to track loading
+  const [testimonies, setTestimonies] = useState<Testimony[]>([]);
+  const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const getTestimonies = async () => {
       const fetchedTestimonies = await fetchTestimonies();
       setTestimonies(fetchedTestimonies);
-      setLoading(false); // Set loading to false after fetching testimonies
+      setLoading(false);
       console.log("Fetched Testimonies:", fetchedTestimonies);
     };
 
@@ -46,12 +53,12 @@ export default function Testimony() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!loading) { // Prevent auto-advancing while loading
+      if (!loading) {
         nextTestimony();
       }
     }, 5000);
     return () => clearInterval(interval);
-  }, [loading]);
+  }, [loading, testimonies.length]);
 
   // Render stars function
   const renderStars = (star: number) => {
@@ -75,7 +82,7 @@ export default function Testimony() {
       </h2>
 
       {/* Testimony Display */}
-      {loading ? ( // Show loading component while loading
+      {loading ? (
         <Loading />
       ) : (
         <div className="flex items-center justify-center space-x-2 sm:space-x-4 lg:space-x-16">
@@ -88,7 +95,7 @@ export default function Testimony() {
 
           <div className="flex flex-shrink-0 w-64 sm:w-80 lg:w-96">
             <div
-              key={testimonies[currentIndex]?.id}
+              key={testimonies[currentIndex]?.name}
               className="bg-gray-200 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg flex flex-col justify-center items-center h-[150px] sm:h-[250px] lg:h-[350px] w-full transition-transform duration-300"
             >
               {/* Star Rating */}

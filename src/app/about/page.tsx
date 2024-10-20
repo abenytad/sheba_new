@@ -135,10 +135,10 @@ export default function About() {
                 <h3 className="text-xl md:text-2xl font-semibold text-secondary mb-2">Mrs. Samrawit Yimer</h3>
                 <div className="w-full md:max-w-3xl mx-auto"> {/* Fixed width for paragraphs */}
                     <p className="text-gray-700 leading-relaxed">
-                        Mrs. Samrawit Yimer is a visionary entrepreneur with a passion for promoting Ethiopia's rich coffee heritage. She founded <span className="text-primary">Sheba Coffee</span> with a mission to share Ethiopia's unique coffee experience with the world while empowering local farmers through sustainable practices.
+                        Mrs. Samrawit Yimer is a visionary entrepreneur with a passion for promoting Ethiopia&#39;s rich coffee heritage. She founded <span className="text-primary">Sheba Coffee</span> with a mission to share Ethiopia&#39;s unique coffee experience with the world while empowering local farmers through sustainable practices.
                     </p>
                 </div>
             </div>
         </div>
-    )
+    );
 }
