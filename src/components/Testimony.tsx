@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import client from '../../utils/sanity';
 
 // Define the Testimony interface
@@ -43,9 +43,9 @@ export default function Testimony() {
     </div>
   );
 
-  const nextTestimony = () => {
+  const nextTestimony = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonies.length);
-  };
+  }, [testimonies.length]);
 
   const prevTestimony = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonies.length) % testimonies.length);
@@ -58,7 +58,7 @@ export default function Testimony() {
       }
     }, 5000);
     return () => clearInterval(interval);
-  }, [loading, testimonies.length]);
+  }, [loading, nextTestimony]);
 
   // Render stars function
   const renderStars = (star: number) => {

@@ -1,5 +1,5 @@
 import Link from 'next/link'; // Import Next.js Link
-import { FaFacebook, FaInstagram, FaTelegram, FaTiktok, FaEnvelope } from 'react-icons/fa'; // Import social media icons
+import { FaFacebook, FaInstagram, FaTelegram, FaTiktok } from 'react-icons/fa'; // Import social media icons
 
 export default function Footer() {
   return (
@@ -12,16 +12,16 @@ export default function Footer() {
         
         {/* Social Media Section */}
         <div className="flex space-x-6">
-          <Link href="https://www.facebook.com/profile.php?id=61566971802522" target="_blank" rel="noopener noreferrer"className="text-gray-500 hover:text-primary text-2xl">
+          <Link href="https://www.facebook.com/profile.php?id=61566971802522" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary text-2xl">
             <FaFacebook />
           </Link>
-          <Link href="https://instagram.com/sheba_coffees" target="_blank" rel="noopener noreferrer"className="text-gray-500 hover:text-primary text-2xl">
+          <Link href="https://instagram.com/sheba_coffees" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary text-2xl">
             <FaInstagram />
           </Link>
           <Link href="https://t.me/+72fDL2lX7j05MWE0" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary text-2xl">
             <FaTelegram />
           </Link>
-          <Link href="https://tiktok.com/@sheba_coffee" target="_blank" rel="noopener noreferrer"className="text-gray-500 hover:text-primary text-2xl">
+          <Link href="https://tiktok.com/@sheba_coffee" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary text-2xl">
             <FaTiktok />
           </Link>
         </div>
