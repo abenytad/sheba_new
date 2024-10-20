@@ -135,10 +135,23 @@ export default function About() {
                 <h3 className="text-xl md:text-2xl font-semibold text-secondary mb-2">Mrs. Samrawit Yimer</h3>
                 <div className="w-full md:max-w-3xl mx-auto"> {/* Fixed width for paragraphs */}
                     <p className="text-gray-700 leading-relaxed">
-                        Mrs. Samrawit Yimer is a visionary entrepreneur with a passion for promoting Ethiopia&#39;s rich coffee heritage. She founded <span className="text-primary">Sheba Coffee</span> with a mission to share Ethiopia&#39;s unique coffee experience with the world while empowering local farmers through sustainable practices.
+                    Mrs. Samrawit Yimer is a visionary entrepreneur and advocate for Ethiopia&#39;s rich cultural heritage, particularly its globally renowned coffee tradition. As the founder and CEO of Sheba Coffee, Mrs. Yimer is dedicated to bringing the distinctive flavors of <span className="text-primary">Ethiopian coffee </span> to an international audience, while simultaneously promoting ethical and sustainable practices within the industry.
+                    </p>
+                    <p className="mt-4 text-gray-700 leading-relaxed">
+                    Driven by a deep commitment to the empowerment of local coffee farmers, she has built <span className="text-primary">Sheba Coffee</span> on the principles of fair trade, sustainability, and community development. Under her leadership, the company not only showcases Ethiopia&#39;s unique coffee beans, but also invests in the livelihood of the farmers by ensuring they receive fair compensation and have access to resources for improving agricultural practices.
+                    </p>
+
+                    <p className="mt-4 text-gray-700 leading-relaxed">
+                    Mrs. Samrawit&#39;s passion extends beyond business; she is an advocate for environmental stewardship and social impact. By integrating sustainable farming techniques and fostering long-term partnerships with farming communities, she is helping to preserve Ethiopia&#39;s coffee-growing regions for future generations while promoting the country&#39;s coffee heritage on the global stage. Her work has positioned <span className="text-primary">Sheba Coffee</span> as a bridge between the traditional craftsmanship of Ethiopian coffee producers and the evolving demands of the international coffee market.
+
+                    </p>
+                    <p className="mt-4 text-gray-700 leading-relaxed">
+                    With a strong vision and unwavering dedication, Mrs. Samrawit continues to be a trailblazer in the coffee industry, making significant contributions to both the global coffee landscape and the economic growth of Ethiopia.
                     </p>
                 </div>
             </div>
+            <div className="h-16"></div>
         </div>
     );
 }
+

@@ -16,7 +16,7 @@ export default function Contact() {
         </div>
         <div className="contact-div">
           <FiMail className="contact-icon" /> 
-          <Link href="mailto:info@weshebacoffee.com" className="contact-link"> 
+          <Link href="mailto:shebacoffeeethiopia@gmail.com" className="contact-link"> 
             info@weshebacoffee.com
           </Link>
         </div>

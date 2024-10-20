@@ -32,8 +32,8 @@ const ContactInfo: React.FC = () => {
       
       <div className="flex items-center mb-4 hover:bg-gray-100 rounded p-2 transition-colors">
         <FaEnvelope className="mr-2 text-xl text-tertiary" />
-        <Link href="mailto:contact@sheba.com">
-          <span className="text-gray-700 hover:underline cursor-pointer">contact@sheba.com</span>
+        <Link href="mailto:shebacoffeeethiopia@gmail.com">
+          <span className="text-gray-700 hover:underline cursor-pointer">shebacoffeeethiopia@gmail.com</span>
         </Link>
       </div>
     </div>

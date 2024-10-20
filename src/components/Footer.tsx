@@ -33,20 +33,6 @@ export default function Footer() {
           <p className="text-sm sm:text-base inline-block">© 2024 ALL RIGHTS RESERVED.</p> {/* Rights info */}
         </div>
       </div>
-
-      {/* Designed & Developed By Section */}
-      <div className="text-center mt-4 text-sm text-gray-500 flex flex-col items-center"> {/* Adjusted mt-4 for less space */}
-        <p>Designed & Developed by Abenezer Tadesse</p>
-        <div className="flex items-center space-x-4 mt-2"> {/* Added space between icons and text */}
-          <Link href="tel:+251900231586" className="flex items-center space-x-1">
-            <span>+251900231586</span>
-          </Link>
-          <Link href="mailto:abenezertadesse353@gmail.com" target="_blank" rel="noopener noreferrer " className="flex items-center space-x-1">
-            <FaEnvelope className="text-gray-500 text-lg" />
-            <span className="text-sm">abenezertadesse353@gmail.com</span>
-          </Link>
-        </div>
-      </div>
     </footer>
   );
 }
