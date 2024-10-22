@@ -5,7 +5,7 @@ const ContactInfo: React.FC = () => {
   return (
     <div className="flex-1 p-6 bg-white rounded-lg">
       <h2 className="text-2xl font-semibold text-primary mb-4 text-center md:text-left">
-        Thank you for visiting us at sheba.com
+        Thank you for visiting us at shebacoffeeethiopia.com
       </h2>
       <h3 className="text-lg text-secondary mb-6 text-center md:text-left">
         If you need to get in touch with the Sheba family, feel free to contact us

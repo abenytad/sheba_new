@@ -1,33 +1,25 @@
-// components/Hero.tsx
 "use client";
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image'; // Importing Image from Next.js
+import Image from 'next/image'; 
 import { FaFacebookF, FaInstagram, FaTelegramPlane, FaTiktok, FaEnvelope } from 'react-icons/fa';
-
 export default function Hero() {
   const [scrolled, setScrolled] = useState(false);
-
-  // Detect scroll position to toggle scrolled state
   useEffect(() => {
     const handleScroll = () => {
-      // If the scroll position is greater than 50 pixels, set `scrolled` to true
       if (window.scrollY > 0) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   return (
     <section className="relative h-screen w-full">
-      {/* Video Background */}
       <video
         className="absolute inset-0 object-cover w-full h-full"
         src="/videos/bg.mp4"
@@ -41,14 +33,10 @@ export default function Hero() {
         <Image 
           src="/images/logo2.png" 
           alt="Sheba Coffee Logo" 
-          width={350} // Set an appropriate width
-          height={350} // Set an appropriate height
-          className="mt-8" // Add margin below the logo
+          width={350} 
+          height={350}
+          className="mt-8" 
         />
-        
-        {/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug sm:leading-tight text-primary">
-          Welcome to Sheba Coffee
-        </h1> */}
         <p className="text-base sm:text-xl md:text-3xl max-w-4xl">
           Where we bring you the rich flavors and heritage of Ethiopian coffee.
         </p>
@@ -70,14 +58,11 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-
-      {/* Social Media Icons for Larger Screens */}
       <div
         className={`hidden sm:flex fixed top-1/2 transform -translate-y-1/2 flex-col space-y-4 sm:space-y-6 z-20 transition-all duration-300 ${
           scrolled ? 'left-4 sm:left-10 text-secondary' : 'left-2 sm:left-6 text-white'
         }`}
       >
-        {/* Facebook */}
         <Link
           href="https://www.facebook.com/profile.php?id=61566971802522"
           className={`group w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-transparent transition duration-300 ${
@@ -90,8 +75,6 @@ export default function Hero() {
         >
           <FaFacebookF size={20} className="sm:text-lg" />
         </Link>
-
-        {/* Instagram */}
         <Link
           href="https://instagram.com/sheba_coffees"
           className={`group w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-transparent transition duration-300 ${
@@ -104,8 +87,6 @@ export default function Hero() {
         >
           <FaInstagram size={20} className="sm:text-lg" />
         </Link>
-
-        {/* Telegram */}
         <Link
           href="https://t.me/+72fDL2lX7j05MWE0"
           className={`group w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-transparent transition duration-300 ${
@@ -118,10 +99,8 @@ export default function Hero() {
         >
           <FaTelegramPlane size={20} className="sm:text-lg" />
         </Link>
-
-        {/* TikTok */}
         <Link
-          href="https://tiktok.com/@sheba_coffee"
+          href="https://tiktok.com/@sheba_coffee1"
           className={`group w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-transparent transition duration-300 ${
             scrolled
               ? 'hover:bg-secondary hover:text-white text-secondary font-semibold'
@@ -133,7 +112,6 @@ export default function Hero() {
           <FaTiktok size={20} className="sm:text-lg" />
         </Link>
 
-        {/* Email */}
         <Link
           href="mailto:your-email@example.com"
           className={`group w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-transparent transition duration-300 ${

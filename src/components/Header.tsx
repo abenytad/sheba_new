@@ -29,10 +29,8 @@ export default function Header() {
         isSticky ? "bg-black/75" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center justify-between py-4 max-w-screen-xl mx-auto px-4"> {/* Adjusted the height with py-4 for more vertical centering */}
-        
-        {/* Logo section on the left */}
-        <div className="flex-shrink-0 flex items-center h-full"> {/* Added flex and h-full to center vertically */}
+      <div className="flex items-center justify-between py-4 max-w-screen-xl mx-auto px-4">
+        <div className="flex-shrink-0 flex items-center h-full">
           <Link href="/">
             <Image
               src="/images/logo1.png"
@@ -43,7 +41,6 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Desktop Links - centered */}
         <div className="flex-1 hidden md:flex justify-center">
           <nav className="space-x-6 text-white text-sm">
             {["/", "/about", "/blog", "/contact"].map((path) => (
@@ -60,7 +57,6 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Mobile Menu Icon - Positioned to the top right */}
         <div className="md:hidden flex-shrink-0 absolute top-0 right-4 flex items-center h-full">
           <button onClick={toggleMenu} className="text-white">
             {isMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />}
@@ -68,20 +64,17 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Full-Screen Mobile Drawer */}
       <div
         className={`fixed top-0 left-0 h-full w-full bg-black transition-transform duration-300 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden z-50`}
       >
-        {/* Close Icon Positioned at Top-Right Inside Drawer */}
         <div className="absolute top-4 right-4">
           <button onClick={toggleMenu} className="text-white">
             <FiX size={30} />
           </button>
         </div>
 
-        {/* Links Section - Moved to Top of Drawer */}
         <nav className="flex flex-col justify-start items-center pt-16 space-y-6 text-white text-base">
           {["/", "/about", "/blog", "/contact"].map((path) => (
             <Link

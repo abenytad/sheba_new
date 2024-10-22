@@ -123,17 +123,16 @@ export default function About() {
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">Our Founder</h2>
             </div>
 
-            {/* Founder Image and Paragraph */}
             <div className="max-w-4xl mx-auto px-6 text-center mt-6">
                 <Image
-                    src="/images/pic.jpg" // Replace with actual image path
+                    src="/images/pic.jpg"
                     alt="Mrs. Samrawit Yimer"
-                    width={128} // Adjust the width as needed
-                    height={128} // Adjust the height as needed
+                    width={200}
+                    height={200} 
                     className="rounded-full mx-auto mb-4"
                 />
                 <h3 className="text-xl md:text-2xl font-semibold text-secondary mb-2">Mrs. Samrawit Yimer</h3>
-                <div className="w-full md:max-w-3xl mx-auto"> {/* Fixed width for paragraphs */}
+                <div className="w-full md:max-w-3xl mx-auto"> 
                     <p className="text-gray-700 leading-relaxed">
                     Mrs. Samrawit Yimer is a visionary entrepreneur and advocate for Ethiopia&#39;s rich cultural heritage, particularly its globally renowned coffee tradition. As the founder and CEO of Sheba Coffee, Mrs. Yimer is dedicated to bringing the distinctive flavors of <span className="text-primary">Ethiopian coffee </span> to an international audience, while simultaneously promoting ethical and sustainable practices within the industry.
                     </p>

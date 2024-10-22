@@ -21,12 +21,10 @@ export default function Footer() {
           <Link href="https://t.me/+72fDL2lX7j05MWE0" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary text-2xl">
             <FaTelegram />
           </Link>
-          <Link href="https://tiktok.com/@sheba_coffee" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary text-2xl">
+          <Link href="https://tiktok.com/@sheba_coffee1" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary text-2xl">
             <FaTiktok />
           </Link>
         </div>
-
-        {/* Company Info Section */}
         <div className="text-center sm:text-right text-black uppercase font-bold"> {/* Text in black, uppercase */}
           <p className="text-lg sm:text-xl inline-block">SHEBA COFFEE</p>
           <span className="mx-2">|</span> {/* Separator */}
