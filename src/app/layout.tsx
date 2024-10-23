@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import "./globals.css";
 import Footer from "@/components/Footer";
-import Arrow from "@/components/Arrow"; // Import the Arrow component
+import Arrow from "@/components/Arrow"; 
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,14 +23,36 @@ export const metadata: Metadata = {
     default:"Sheba Coffee",
     template:"%s  |  Sheba Coffee"
   },
-  description: "Single-origin Ethiopian coffees provider",
+  description: "Experience the rich flavors of authentic Ethiopian coffee with Sheba Coffee. Sourced from the finest coffee-growing regions in Ethiopia, our premium coffee beans offer a unique and unforgettable taste. Order your coffee today!",
   keywords:["ethiopian coffees","queen sheba","roasted coffee","Queen of Sheba coffee","Ethiopian coffee suppliers","Ethiopian coffee flavors","Freshly roasted Ethiopian coffee","Best Ethiopian coffee"],
   icons:{
     icon:["/favicon.ico?v=4"],
     apple:["/apple-touch-icon.png?v=4"],
     shortcut:["/apple-touch-icon.png"]
   },
-  manifest:"/site.webmanifest"
+  manifest:"/site.webmanifest",
+  openGraph: {
+    title: 'Sheba Coffee - Ethiopian Coffee',
+    description: 'Sheba Coffee offers authentic Ethiopian coffee sourced from the finest coffee-growing regions. Experience the unique flavors of Ethiopia.',
+    url: 'https://shebacoffeeethiopia.com',
+    siteName: 'Sheba Coffee',
+    images: [
+      {
+        url: '/images/logo2.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Sheba Coffee',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sheba Coffee - Ethiopian Coffee',
+    description: 'Sheba Coffee offers authentic Ethiopian coffee sourced from the finest coffee-growing regions.',
+    images: ['/images/logo2.jpg'],
+  },
 };
 
 export default function RootLayout({
@@ -44,7 +66,7 @@ export default function RootLayout({
         <Header />
         <main className="relative z-0">{children}</main>
         <Footer />
-        <Arrow /> {/* Add the Arrow component here */}
+        <Arrow /> 
       </body>
     </html>
   );

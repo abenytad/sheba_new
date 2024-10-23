@@ -1,23 +1,23 @@
-import ContactInfo from "@/components/ContactInfo"; // Ensure the import path is correct
+import ContactInfo from "@/components/ContactInfo"; 
 import ContactForm from "@/components/ContactForm";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Contact"
+    title: "Contact",
+    description:"Have questions or want to learn more about Sheba Coffee? Reach out to us through our contact page. Whether it's about our products, sourcing, or business inquiries, we're here to help you experience the best of Ethiopian coffee.",
+    keywords:["Contact Sheba Coffee", "Ethiopian coffee", "customer service", "coffee inquiries", "Sheba Coffee contact", "Ethiopian coffee business"]
 }
 export default function ContactPage() {
   return (
     <div>
-      {/* Full-width Box with gray background starting from the top */}
       <div className="w-full bg-gray-300 h-80 md:h-96 flex items-center justify-center">
         <div className="flex flex-col items-center w-full max-w-5xl px-4">
           <div className="flex items-center justify-center w-full">
-            {/* Visible lines on all screens */}
-            <hr className="w-1/4 sm:w-1/6 border-t border-secondary" /> {/* Shorter line on the left */}
-            <h1 className="mx-4 text-4xl sm:text-5xl font-bold text-primary text-center">Sheba Coffee</h1> {/* Responsive font size */}
-            <hr className="w-1/4 sm:w-1/6 border-t border-secondary" /> {/* Shorter line on the right */}
+            <hr className="w-1/4 sm:w-1/6 border-t border-secondary" />
+            <h1 className="mx-4 text-4xl sm:text-5xl font-bold text-primary text-center">Sheba Coffee</h1> 
+            <hr className="w-1/4 sm:w-1/6 border-t border-secondary" /> 
           </div>
-          <p className="text-lg md:text-xl text-gray-700 text-center mt-4"> {/* Responsive font size */}
+          <p className="text-lg md:text-xl text-gray-700 text-center mt-4"> 
             Stay connected with the Sheba family—where every cup brings us closer together!
           </p>
         </div>

@@ -2,15 +2,11 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import client from '../../utils/sanity';
-
-// Define the Testimony interface
 interface Testimony {
   name: string;
   description: string;
   star: number;
 }
-
-// Function to fetch testimonies
 async function fetchTestimonies() {
   const testimonies = await client.fetch(`*[_type == "testimony"]{
     name,
@@ -35,22 +31,17 @@ export default function Testimony() {
 
     getTestimonies();
   }, []);
-
-  // Loading component
   const Loading = () => (
     <div className="flex items-center justify-center h-72">
-      <div className="loader">Loading...</div> {/* Add your loader styles here */}
+      <div className="loader">Loading...</div>
     </div>
   );
-
   const nextTestimony = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonies.length);
   }, [testimonies.length]);
-
   const prevTestimony = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonies.length) % testimonies.length);
   };
-
   useEffect(() => {
     const interval = setInterval(() => {
       if (!loading) {
@@ -59,29 +50,22 @@ export default function Testimony() {
     }, 5000);
     return () => clearInterval(interval);
   }, [loading, nextTestimony]);
-
-  // Render stars function
   const renderStars = (star: number) => {
     if (star >= 5) {
-      return '★★★★★'; // Five stars
+      return '★★★★★'; 
     } else if (star <= 0) {
-      return ''; // Leave space for no stars
+      return '';
     } else {
-      return '★'.repeat(star); // Stars according to the value
+      return '★'.repeat(star);
     }
   };
 
   return (
     <section className="flex flex-col items-center py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-24">
-      {/* Vertical Line */}
       <div className="w-1 h-12 sm:h-16 lg:h-20 bg-primary mb-8"></div>
-
-      {/* Title */}
       <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-6 text-center">
         Loved by <span className="text-primary">Coffee Lovers</span>
       </h2>
-
-      {/* Testimony Display */}
       {loading ? (
         <Loading />
       ) : (

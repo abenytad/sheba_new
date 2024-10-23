@@ -3,18 +3,14 @@
 import { useEffect, useState } from "react";
 import client from "../../utils/sanity";
 import Image from "next/image";
-
-// Define the interface for a product
 interface Product {
-  id: string; // Assuming products have an id field, you can adjust this based on your data structure
+  id: string;
   name: string;
   description: string;
-  oldprice: number | string; // Assuming price can be a number or string
-  newprice: number | string; // Assuming price can be a number or string
+  oldprice: number | string; 
+  newprice: number | string;
   imageUrl: string;
 }
-
-// Function to fetch products
 async function fetchProducts(): Promise<Product[]> {
   const products = await client.fetch(`*[_type == "product"]{
     _id, // Fetching the _id field for use as a unique key
@@ -26,10 +22,9 @@ async function fetchProducts(): Promise<Product[]> {
   }`);
   return products;
 }
-
 export default function Products() {
-  const [products, setProducts] = useState<Product[]>([]); // Use the Product interface for the state
-  const [loading, setLoading] = useState(true); // State to track loading
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -45,7 +40,7 @@ export default function Products() {
   // Loading component
   const Loading = () => (
     <div className="flex items-center justify-center h-72">
-      <div className="loader">Loading...</div> {/* Add your loader styles here */}
+      <div className="loader">Loading...</div> 
     </div>
   );
 
