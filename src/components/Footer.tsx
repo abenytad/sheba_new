@@ -1,5 +1,5 @@
 import Link from 'next/link'; 
-import { FaFacebook, FaInstagram, FaTelegram, FaTiktok } from 'react-icons/fa'; 
+import { FaFacebook, FaInstagram, FaTelegram, FaTiktok,FaEnvelope } from 'react-icons/fa'; 
 export default function Footer() {
   return (
     <footer className="bg-white py-8 sm:py-10 lg:py-8 mx-auto w-full max-w-7xl px-4 sm:px-8 lg:px-16"> 
@@ -18,6 +18,9 @@ export default function Footer() {
           </Link>
           <Link href="https://tiktok.com/@sheba_coffee1" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary text-2xl">
             <FaTiktok />
+          </Link>
+          <Link href="mailto:info@shebacoffeeethiopia.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary text-2xl">
+            <FaEnvelope />
           </Link>
         </div>
         <div className="text-center sm:text-right text-black uppercase font-bold">

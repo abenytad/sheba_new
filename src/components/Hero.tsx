@@ -53,7 +53,7 @@ export default function Hero() {
           <Link href="https://tiktok.com/@sheba_coffee" target="_blank" rel="noopener noreferrer">
             <FaTiktok size={40} className="text-secondary hover:text-white hover:bg-secondary p-2 rounded-full transition" />
           </Link>
-          <Link href="mailto:your-email@example.com">
+          <Link href="mailto:info@shebacoffeeethiopia.com">
             <FaEnvelope size={40} className="text-secondary hover:text-white hover:bg-secondary p-2 rounded-full transition" />
           </Link>
         </div>
@@ -113,7 +113,7 @@ export default function Hero() {
         </Link>
 
         <Link
-          href="mailto:your-email@example.com"
+          href="mailto:info@shebacoffeeethiopia.com"
           className={`group w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-transparent transition duration-300 ${
             scrolled
               ? 'hover:bg-secondary hover:text-white text-secondary font-semibold'
