@@ -2,11 +2,13 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import client from '../../utils/sanity';
+
 interface Testimony {
   name: string;
   description: string;
   star: number;
 }
+
 async function fetchTestimonies() {
   const testimonies = await client.fetch(`*[_type == "testimony"]{
     name,
@@ -31,17 +33,21 @@ export default function Testimony() {
 
     getTestimonies();
   }, []);
+
   const Loading = () => (
     <div className="flex items-center justify-center h-72">
       <div className="loader">Loading...</div>
     </div>
   );
+
   const nextTestimony = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonies.length);
   }, [testimonies.length]);
+
   const prevTestimony = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonies.length) % testimonies.length);
   };
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (!loading) {
@@ -50,6 +56,7 @@ export default function Testimony() {
     }, 5000);
     return () => clearInterval(interval);
   }, [loading, nextTestimony]);
+
   const renderStars = (star: number) => {
     if (star >= 5) {
       return '★★★★★'; 
@@ -78,20 +85,33 @@ export default function Testimony() {
           </button>
 
           <div className="flex flex-shrink-0 w-64 sm:w-80 lg:w-96">
-            <div
-              key={testimonies[currentIndex]?.name}
-              className="bg-gray-200 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg flex flex-col justify-center items-center h-[150px] sm:h-[250px] lg:h-[350px] w-full transition-transform duration-300"
-            >
-              {/* Star Rating */}
-              <p className="text-yellow-500 text-lg">{renderStars(testimonies[currentIndex]?.star)}</p>
-              {/* Full text centered */}
-              <p className="text-sm sm:text-lg lg:text-xl text-black italic mb-4 text-center">
-                {testimonies[currentIndex]?.description}
-              </p>
-              <p className="text-xs sm:text-base lg:text-lg text-primary text-center">
-                {testimonies[currentIndex]?.name}
-              </p>
-            </div>
+            {testimonies.length > 0 ? (
+              <div
+                key={testimonies[currentIndex]?.name}
+                className="bg-gray-200 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg flex flex-col justify-center items-center h-[150px] sm:h-[250px] lg:h-[350px] w-full transition-transform duration-300"
+              >
+                {/* Star Rating */}
+                <p className="text-yellow-500 text-lg">{renderStars(testimonies[currentIndex]?.star)}</p>
+                {/* Full text centered */}
+                <p className="text-sm sm:text-lg lg:text-xl text-black italic mb-4 text-center">
+                  {testimonies[currentIndex]?.description}
+                </p>
+                <p className="text-xs sm:text-base lg:text-lg text-primary text-center">
+                  {testimonies[currentIndex]?.name}
+                </p>
+              </div>
+            ) : (
+              <div
+                className="bg-gray-200 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg flex flex-col justify-center items-center h-[150px] sm:h-[250px] lg:h-[350px] w-full transition-transform duration-300"
+              >
+                <p className="text-sm sm:text-lg lg:text-xl text-black italic mb-4 text-center">
+                  We look forward to your feedback after your experience with us!
+                </p>
+                <p className="text-xs sm:text-base lg:text-lg text-primary text-center">
+                  Sheba Family
+                </p>
+              </div>
+            )}
           </div>
 
           <button
