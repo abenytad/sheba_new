@@ -5,7 +5,6 @@ import Slogan from "@/components/Slogan";
 import Testimony from "@/components/Testimony";
 import Video from "@/components/Video";
 import Contact from "@/components/Contact";
-import Qualities from "@/components/Qualities";
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
       <Sheba />
       <Products />
       <Slogan />
-      <Qualities />
       <Video />
       <Testimony />
       <Contact />

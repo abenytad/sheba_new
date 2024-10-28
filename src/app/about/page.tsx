@@ -102,13 +102,13 @@ export default function About() {
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">Our Founder</h2>
             </div>
             <div className="max-w-4xl mx-auto px-6 text-center mt-6">
-                <Image
+                {/* <Image
                     src="/images/pic.jpg"
                     alt="Mrs. Samrawit Yimer"
                     width={200}
                     height={200} 
                     className="rounded-full mx-auto mb-4"
-                />
+                /> */}
                 <h3 className="text-xl md:text-2xl font-semibold text-secondary mb-2">Mrs. Samrawit Yimer</h3>
                 <div className="w-full md:max-w-3xl mx-auto"> 
                     <p className="text-gray-700 leading-relaxed">
